@@ -1018,8 +1018,8 @@ export default {
         async fetchData(colleagueId) {
             console.log('Fetching data for colleague ID:', colleagueId); // Check what ID is being sent
             try {
-                // const response = await fetch(`https://icici-phishing.onrender.com/phishing_opened/${colleagueId}`);
-                const response = await fetch(`http://127.0.0.1:5000/phishing_opened/${colleagueId}`);
+                const response = await fetch(`https://telecrm-phishing-application.onrender.com/phishing_opened/${colleagueId}`);
+                // const response = await fetch(`http://127.0.0.1:5000/phishing_opened/${colleagueId}`);
                 // const response = await fetch(`https://phishing-application-demo.onrender.com/phishing_opened/${colleagueId}`);
                 const data = await response.json();
                 console.log('Response data:', data); // Log the response data
@@ -1127,8 +1127,8 @@ export default {
 
         async fetchQuestions() {
             try {
-                const response = await fetch('http://127.0.0.1:5000/get_random_questions');
-                // const response = await fetch('https://icici-phishing.onrender.com/get_random_questions');
+                // const response = await fetch('http://127.0.0.1:5000/get_random_questions');
+                const response = await fetch('https://telecrm-phishing-application.onrender.com/get_random_questions');
                 // const response = await fetch('https://phishing-application-demo.onrender.com/get_random_questions');
                 if (!response.ok) {
                     throw new Error('Failed to fetch questions');
@@ -1270,8 +1270,8 @@ async submitAnswers() {
         });
 
         // Send answers and score to the backend
-        const response = await fetch(`http://127.0.0.1:5000/submit_answers/${this.colleague_id}`, {
-        // const response = await fetch(`https://icici-phishing.onrender.com/submit_answers/${this.colleague_id}`, {
+        // const response = await fetch(`http://127.0.0.1:5000/submit_answers/${this.colleague_id}`, {
+        const response = await fetch(`https://telecrm-phishing-application.onrender.com/submit_answers/${this.colleague_id}`, {
         // const response = await fetch(`https://phishing-application-demo.onrender.com/submit_answers/${this.colleague_id}`, {
             method: 'POST',
             headers: {
@@ -1323,8 +1323,8 @@ async submitAnswers() {
 
         async updateReportStatus(colleagueId, score) {
             try {
-                const response = await fetch(`http://127.0.0.1:5000/update_report_status/${colleagueId}`, {
-                // const response = await fetch(`https://icici-phishing.onrender.com/update_report_status/${colleagueId}`, {
+                // const response = await fetch(`http://127.0.0.1:5000/update_report_status/${colleagueId}`, {
+                const response = await fetch(`https://telecrm-phishing-application.onrender.com/update_report_status/${colleagueId}`, {
                 // const response = await fetch(`https://phishing-application-demo.onrender.com/update_report_status/${colleagueId}`, {
                     method: 'POST',
                     headers: {
@@ -1364,8 +1364,8 @@ async submitAnswers() {
 
         async downloadPDF(colleagueId) {
             try {
-                const response = await fetch(`http://127.0.0.1:5000/download_certificate/${colleagueId}`);
-                // const response = await fetch(`https://icici-phishing.onrender.com/download_certificate/${colleagueId}`);
+                // const response = await fetch(`http://127.0.0.1:5000/download_certificate/${colleagueId}`);
+                const response = await fetch(`https://telecrm-phishing-application.onrender.com/download_certificate/${colleagueId}`);
                 // const response = await fetch(`https://phishing-application-demo.onrender.com/download_certificate/${colleagueId}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -1398,8 +1398,8 @@ async submitAnswers() {
 
             try {
                 // Fetch a new set of random questions
-                const response = await fetch('http://127.0.0.1:5000/get_random_questions');
-                // const response = await fetch('https://icici-phishing.onrender.com/get_random_questions');
+                // const response = await fetch('http://127.0.0.1:5000/get_random_questions');
+                const response = await fetch('https://telecrm-phishing-application.onrender.com/get_random_questions');
                 // const response = await fetch('https://phishing-application-demo.onrender.com/get_random_questions');
                 if (!response.ok) {
                     throw new Error('Failed to fetch new questions');
@@ -1455,16 +1455,16 @@ async submitAnswers() {
 
         async sendEmail(score) {
             const colleagueId = this.$route.params.colleague_id;  // This should be an email, adjust if necessary
-            const studyMaterialLink = `http://127.0.0.1:5000/study-material/${colleagueId}`;
-            // const studyMaterialLink = `https://icici-phishing.onrender.com/study-material/${colleagueId}`;
+            // const studyMaterialLink = `http://127.0.0.1:5000/study-material/${colleagueId}`;
+            const studyMaterialLink = `https://telecrm-phishing-application.onrender.com/study-material/${colleagueId}`;
             // const studyMaterialLink = `https://phishing-application-demo.onrender.com/study-material/${colleagueId}`;
             const emailContent = score >= 70
                 ? { subject: "Training Program Completed", body: `Congratulations on completing the training program! Your score is ${score}.` }
                 : { subject: "Training Program Incomplete", body: `You need to reattempt the training program. Your score is ${score}. You can review the study material [here](${studyMaterialLink}).` };
 
             try {
-                const response = await fetch(`http://127.0.0.1:5000/send_result_email`, {
-                // const response = await fetch(`https://icici-phishing.onrender.com/send_result_email`, {
+                // const response = await fetch(`http://127.0.0.1:5000/send_result_email`, {
+                const response = await fetch(`https://telecrm-phishing-application.onrender.com/send_result_email`, {
                 // const response = await fetch(`https://phishing-application-demo.onrender.com/send_result_email`, {
                     method: 'POST',
                     headers: {

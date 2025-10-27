@@ -518,8 +518,8 @@ def send_email():
             msg['From'] = from_email
             msg['To'] = colleague.email
 
-            # tracking_link = f"https://icici-phishing.onrender.com/phish_intermediate/{colleague.id}"
-            tracking_link = f"http://127.0.0.1:5000/phish_intermediate/{colleague.id}"
+            tracking_link = f"https://telecrm-phishing-application.onrender.com/phish_intermediate/{colleague.id}"
+            # tracking_link = f"http://127.0.0.1:5000/phish_intermediate/{colleague.id}"
             body = email_template.replace("{{recipient_name}}", colleague.name)
             body = body.replace("{{action_link}}", tracking_link)
             body = body.replace("{{action_name}}", action_name)

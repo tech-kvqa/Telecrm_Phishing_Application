@@ -45,9 +45,9 @@ export default {
     methods: {
         async login() {
             try {
-                const response = await fetch('http://127.0.0.1:5000/login', {
+                // const response = await fetch('http://127.0.0.1:5000/login', {
                 // const response = await fetch('http://35.182.29.153/api/login', {
-                // const response = await fetch('https://icici-phishing.onrender.com//login', {
+                const response = await fetch('https://telecrm-phishing-application.onrender.com//login', {
                 // const response = await fetch('https://phishing-application-demo.onrender.com/login', {
                     method: 'POST',
                     headers: {
