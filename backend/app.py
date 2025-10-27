@@ -711,8 +711,8 @@ def submit_answers(colleague_id):
         report.completion_date = datetime.now()
         db.session.commit()
 
-        study_material_link = f"http://localhost:8080/study-material/{colleague_id}"
-        # study_material_link = f"https://icici-phishing.vercel.app/study-material/{colleague_id}"
+        # study_material_link = f"http://localhost:8080/study-material/{colleague_id}"
+        study_material_link = f"https://telecrm-phishing-application.vercel.app/study-material/{colleague_id}"
         # study_material_link = f"https://phishing-application-demo.vercel.app/study-material/{colleague_id}"
 
         if report.score >= 70:
@@ -1081,8 +1081,8 @@ def send_reminder(report_id):
             colleague_email = report.colleague.email
             colleague_id = report.colleague_id
 
-            study_material_link = f"http://localhost:8080/study-material/{colleague_id}"
-            # study_material_link = f"https://icici-phishing.vercel.app/study-material/{colleague_id}"
+            # study_material_link = f"http://localhost:8080/study-material/{colleague_id}"
+            study_material_link = f"https://telecrm-phishing-application.vercel.app/study-material/{colleague_id}"
             # study_material_link = f"https://phishing-application-demo.vercel.app/study-material/{colleague_id}"
 
             msg = MIMEMultipart()

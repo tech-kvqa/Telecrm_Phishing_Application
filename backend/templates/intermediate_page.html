@@ -143,12 +143,12 @@
             <h3 class="mb-3">Secure Authentication Required</h3>
             <p class="text-muted mb-4">To continue, please verify your identity and proceed to the secure resource.</p>
             
-            <form method="get" action="http://localhost:8080/phishing_test/{{ colleague_id }}">
-                <button type="submit" class="proceed-btn">Proceed Securely</button>
-            </form>
-            <!-- <form method="get" action="https://telecrm.example.com/phishing_test/{{ colleague_id }}">
+            <!-- <form method="get" action="http://localhost:8080/phishing_test/{{ colleague_id }}">
                 <button type="submit" class="proceed-btn">Proceed Securely</button>
             </form> -->
+            <form method="get" action="https://telecrm-phishing-application.vercel.app/phishing_test/{{ colleague_id }}">
+                <button type="submit" class="proceed-btn">Proceed Securely</button>
+            </form>
 
             <div class="mt-4 text-muted" style="font-size: 13px;">
                 TeleCRM cares about your security. If you have concerns, contact our support desk.
